@@ -19,86 +19,86 @@ const router = new Router({
 				},
 				{
 					path: '/userList',
-					component: resolve => require(['../components/page/UserList.vue'], resolve)
-				},
-				{
-					path: '/addUser',
-					component: resolve => require(['../components/page/AddUser.vue'], resolve)
-				},
-				{
-					path: '/editUser',
-					component: resolve => require(['../components/page/EditUser.vue'], resolve)
-				},
-				{
-					path: '/appstoreAccountList',
-					component: resolve => require(['../components/page/AppstoreAccountList.vue'], resolve),
-					// children: [
-					// 	{
-					// 		path: '/appstoreAccountEditor/:id',
-					// 		component: resolve => require(['../components/page/AppstoreAccountEditor.vue'], resolve)
-					// 	}
-					// ]
-				},
-				{
-					path: '/appstoreAccountEditor',
-					component: resolve => require(['../components/page/EditorAppstoreAccount.vue'], resolve)
-				},
-				{
-					path: '/gameTemplateList',
-					component: resolve => require(['../components/page/GameTemplateList.vue'], resolve)
-				},
-				{
-					path: '/buildMacList',
-					component: resolve => require(['../components/page/BuildMacList.vue'], resolve)
-				},
-				{
-					path: '/addBuildMac',
-					component: resolve => require(['../components/page/AddBuildMac.vue'], resolve)
-				},
-				{
-					path: '/editBuildMac',
-					component: resolve => require(['../components/page/EditBuildMac.vue'], resolve)
-				},
-				{
-					path: '/gameList',
-					component: resolve => require(['../components/page/GameList.vue'], resolve)
-				},
-				{
-					path: '/addGame',
-					component: resolve => require(['../components/page/AddGame.vue'], resolve)
-				},
-				{
-					path: '/addGameSeries',
-					component: resolve => require(['../components/page/AddGameSeries.vue'], resolve)
-				},
-				{
-					path: '/seriesList',
-					component: resolve => require(['../components/page/SeriesList.vue'], resolve)
-				},
-				{
-					path: '/editorGame',
-					component: resolve => require(['../components/page/EditorGame.vue'], resolve)
+					component: resolve => require(['../components/page/account/AccountList.vue'], resolve)
 				},
 				// {
-				// 	path: '/editSeries',
-				// 	component: resolve => require(['../components/page/EditSeries.vue'], resolve)
+				// 	path: '/addUser',
+				// 	component: resolve => require(['../components/page/AddUser.vue'], resolve)
 				// },
-				{
-					path: '/taskList',
-					component: resolve => require(['../components/page/TaskList.vue'], resolve)
-				},
-				{
-					path: '/gameDataList',
-					component: resolve => require(['../components/page/GameDataList.vue'], resolve)
-				},
-				{
-					path: '/incomeDataList',
-					component: resolve => require(['../components/page/IncomeDataList.vue'], resolve)
-				},
-				{
-					path: '/addIncome',
-					component: resolve => require(['../components/page/AddIncome.vue'], resolve)
-				},
+				// {
+				// 	path: '/editUser',
+				// 	component: resolve => require(['../components/page/EditUser.vue'], resolve)
+				// },
+				// {
+				// 	path: '/appstoreAccountList',
+				// 	component: resolve => require(['../components/page/AppstoreAccountList.vue'], resolve),
+				// 	// children: [
+				// 	// 	{
+				// 	// 		path: '/appstoreAccountEditor/:id',
+				// 	// 		component: resolve => require(['../components/page/AppstoreAccountEditor.vue'], resolve)
+				// 	// 	}
+				// 	// ]
+				// },
+				// {
+				// 	path: '/appstoreAccountEditor',
+				// 	component: resolve => require(['../components/page/EditorAppstoreAccount.vue'], resolve)
+				// },
+				// {
+				// 	path: '/gameTemplateList',
+				// 	component: resolve => require(['../components/page/GameTemplateList.vue'], resolve)
+				// },
+				// {
+				// 	path: '/buildMacList',
+				// 	component: resolve => require(['../components/page/BuildMacList.vue'], resolve)
+				// },
+				// {
+				// 	path: '/addBuildMac',
+				// 	component: resolve => require(['../components/page/AddBuildMac.vue'], resolve)
+				// },
+				// {
+				// 	path: '/editBuildMac',
+				// 	component: resolve => require(['../components/page/EditBuildMac.vue'], resolve)
+				// },
+				// {
+				// 	path: '/gameList',
+				// 	component: resolve => require(['../components/page/GameList.vue'], resolve)
+				// },
+				// {
+				// 	path: '/addGame',
+				// 	component: resolve => require(['../components/page/AddGame.vue'], resolve)
+				// },
+				// {
+				// 	path: '/addGameSeries',
+				// 	component: resolve => require(['../components/page/AddGameSeries.vue'], resolve)
+				// },
+				// {
+				// 	path: '/seriesList',
+				// 	component: resolve => require(['../components/page/SeriesList.vue'], resolve)
+				// },
+				// {
+				// 	path: '/editorGame',
+				// 	component: resolve => require(['../components/page/EditorGame.vue'], resolve)
+				// },
+				// // {
+				// // 	path: '/editSeries',
+				// // 	component: resolve => require(['../components/page/EditSeries.vue'], resolve)
+				// // },
+				// {
+				// 	path: '/taskList',
+				// 	component: resolve => require(['../components/page/TaskList.vue'], resolve)
+				// },
+				// {
+				// 	path: '/gameDataList',
+				// 	component: resolve => require(['../components/page/GameDataList.vue'], resolve)
+				// },
+				// {
+				// 	path: '/incomeDataList',
+				// 	component: resolve => require(['../components/page/IncomeDataList.vue'], resolve)
+				// },
+				// {
+				// 	path: '/addIncome',
+				// 	component: resolve => require(['../components/page/AddIncome.vue'], resolve)
+				// },
 				{
 					path: '/basetable',
 					component: resolve => require(['../components/page/BaseTable.vue'], resolve)

@@ -1,129 +1,142 @@
 import * as config from './config';
-
-export function register(account, password, mail) {
-	return `${config.HOST}/users/register/${account}/${password}/root/${encodeURIComponent(mail)}`;
-}
+import * as utils from './utils';
 
 export function login(account, password) {
-	return `${config.HOST}/users/login/${account}/${password}`;
+	return `${config.HOST}/admin/login/${utils.myEncodeURIComponent(account)}/${utils.myEncodeURIComponent(password)}`;
 }
 
-export function getUserData(accountID) {
-	return `${config.HOST}/users/easy/getUserData/${accountID}`;
+export function getAccountData(page, count, source = null) {
+	const url = `${config.HOST}/admin/getAccountData/${page}/${count}`;
+	if (source === 'web' || source === 'android') {
+		return `${url}/${source}`;
+	}
+	return url;
 }
 
-export function modifyRootUser() {
-	return `${config.HOST}/root/modifyRootUser`;
-}
+// export function register(account, password, mail) {
+// 	return `${config.HOST}/users/register/${account}/${password}/root/${encodeURIComponent(mail)}`;
+// }
 
-export function getRootUsers(lastID, count) {
-	return `${config.HOST}/root/getRootUsers/${lastID}/${count}`;
-}
+// export function login(account, password) {
+// 	return `${config.HOST}/users/login/${account}/${password}`;
+// }
 
-export function getAppStoreAccount() {
-	return `${config.HOST}/games/getAppStoreAccount`;
-}
+// export function getUserData(accountID) {
+// 	return `${config.HOST}/users/easy/getUserData/${accountID}`;
+// }
 
-export function getAppStoreAccountByID(id) {
-	return `${config.HOST}/games/getAppStoreAccountByID/${id}`;
-}
+// export function modifyRootUser() {
+// 	return `${config.HOST}/root/modifyRootUser`;
+// }
 
-export function addAppStoreAccount() {
-	return `${config.HOST}/games/addAppStoreAccount`;
-}
+// export function getRootUsers(lastID, count) {
+// 	return `${config.HOST}/root/getRootUsers/${lastID}/${count}`;
+// }
 
-export function getGameTemplate() {
-	return `${config.HOST}/root/getGameTemplate`;
-}
+// export function getAppStoreAccount() {
+// 	return `${config.HOST}/games/getAppStoreAccount`;
+// }
 
-export function getBuildMac() {
-	return `${config.BUILD_ADMIN_HOST}/getBuildMac`;
-}
+// export function getAppStoreAccountByID(id) {
+// 	return `${config.HOST}/games/getAppStoreAccountByID/${id}`;
+// }
 
-export function addBuildMac() {
-	return `${config.BUILD_ADMIN_HOST}/addBuildMac`;
-}
+// export function addAppStoreAccount() {
+// 	return `${config.HOST}/games/addAppStoreAccount`;
+// }
 
-export function getBuildMacByID(id) {
-	return `${config.BUILD_ADMIN_HOST}/getBuildMacByID/${id}`;
-}
+// export function getGameTemplate() {
+// 	return `${config.HOST}/root/getGameTemplate`;
+// }
 
-export function modifyBuildMac() {
-	return `${config.BUILD_ADMIN_HOST}/modifyBuildMac`;
-}
+// export function getBuildMac() {
+// 	return `${config.BUILD_ADMIN_HOST}/getBuildMac`;
+// }
 
-export function getGameSeries(uid, page, count, creator) {
-	return `${config.HOST}/root/getGameSeries/${uid}/${page}/${count}/${creator}`;
-}
+// export function addBuildMac() {
+// 	return `${config.BUILD_ADMIN_HOST}/addBuildMac`;
+// }
 
-export function addGameSeries() {
-	return `${config.HOST}/root/addGameSeries`;
-}
+// export function getBuildMacByID(id) {
+// 	return `${config.BUILD_ADMIN_HOST}/getBuildMacByID/${id}`;
+// }
 
-export function getGameSeriesByID(id) {
-	return `${config.HOST}/root/getGameSeriesByID/${id}`;
-}
+// export function modifyBuildMac() {
+// 	return `${config.BUILD_ADMIN_HOST}/modifyBuildMac`;
+// }
 
-export function getGames(uid, rootTemplate, rootSeries, creator) {
-	return `${config.HOST}/root/getGames/${uid}/${rootTemplate}/${rootSeries}/${creator}`;
-}
+// export function getGameSeries(uid, page, count, creator) {
+// 	return `${config.HOST}/root/getGameSeries/${uid}/${page}/${count}/${creator}`;
+// }
 
-export function getAllGames(uid, page, count, creator) {
-	return `${config.HOST}/root/getAllGames/${uid}/${page}/${count}/${creator}`;
-}
+// export function addGameSeries() {
+// 	return `${config.HOST}/root/addGameSeries`;
+// }
 
-export function checkGameNames() {
-	return `${config.HOST}/games/checkGameNames`;
-}
+// export function getGameSeriesByID(id) {
+// 	return `${config.HOST}/root/getGameSeriesByID/${id}`;
+// }
 
-export function createGames() {
-	return `${config.HOST}/root/createGames`;
-}
+// export function getGames(uid, rootTemplate, rootSeries, creator) {
+// 	return `${config.HOST}/root/getGames/${uid}/${rootTemplate}/${rootSeries}/${creator}`;
+// }
 
-export function getGame(uid, id) {
-	return `${config.HOST}/root/getGame/${uid}/${id}`;
-}
+// export function getAllGames(uid, page, count, creator) {
+// 	return `${config.HOST}/root/getAllGames/${uid}/${page}/${count}/${creator}`;
+// }
 
-export function modifyGame() {
-	return `${config.HOST}/root/modifyGame`;
-}
+// export function checkGameNames() {
+// 	return `${config.HOST}/games/checkGameNames`;
+// }
 
-export function getAppStoreAccountUsed(seriesID) {
-	return `${config.HOST}/root/getAppStoreAccountUsed/${seriesID}`;
-}
+// export function createGames() {
+// 	return `${config.HOST}/root/createGames`;
+// }
 
-export function addTask() {
-	return `${config.BUILD_ADMIN_HOST}/addTask`;
-}
+// export function getGame(uid, id) {
+// 	return `${config.HOST}/root/getGame/${uid}/${id}`;
+// }
 
-export function getTask(uid, templateID, seriesID, page, count, creator) {
-	return `${config.BUILD_ADMIN_HOST}/getTask/${uid}/${templateID}/${seriesID}/${page}/${count}/${creator}`;
-}
+// export function modifyGame() {
+// 	return `${config.HOST}/root/modifyGame`;
+// }
 
-export function getWaitingTask() {
-	return `${config.BUILD_ADMIN_HOST}/getWaitingTask`;
-}
+// export function getAppStoreAccountUsed(seriesID) {
+// 	return `${config.HOST}/root/getAppStoreAccountUsed/${seriesID}`;
+// }
 
-export function cancelTask(id) {
-	return `${config.BUILD_ADMIN_HOST}/cancelTask/${id}`;
-}
+// export function addTask() {
+// 	return `${config.BUILD_ADMIN_HOST}/addTask`;
+// }
 
-export function deleteGameSeries(uid, id) {
-	return `${config.HOST}/root/deleteGameSeries/${uid}/${id}`;
-}
+// export function getTask(uid, templateID, seriesID, page, count, creator) {
+// 	return `${config.BUILD_ADMIN_HOST}/getTask/${uid}/${templateID}/${seriesID}/${page}/${count}/${creator}`;
+// }
 
-export function getAllGamesData(uid, startDate, endDate, page, count) {
-	return `${config.HOST}/root/getAllGamesData/${uid}/${startDate}/${endDate}/${page}/${count}`;
-}
+// export function getWaitingTask() {
+// 	return `${config.BUILD_ADMIN_HOST}/getWaitingTask`;
+// }
 
-export function addIncome(uid, targetUID, yomob, chance, date) {
-	return `${config.HOST}/root/addIncome/${uid}/${targetUID}/${yomob}/${chance}/${date}`;
-}
+// export function cancelTask(id) {
+// 	return `${config.BUILD_ADMIN_HOST}/cancelTask/${id}`;
+// }
 
-export function getIncome(uid, targetUID, startDate, endDate, page, count) {
-	return `${config.HOST}/root/getIncome/${uid}/${targetUID}/${startDate}/${endDate}/${page}/${count}`;
-}
+// export function deleteGameSeries(uid, id) {
+// 	return `${config.HOST}/root/deleteGameSeries/${uid}/${id}`;
+// }
 
-export function getTaoJinFarmIncome(ssid) {
-	return `${config.HOST}/taoJinFarm/getTaoJinFarmIncome/${ssid}`;
-}
+// export function getAllGamesData(uid, startDate, endDate, page, count) {
+// 	return `${config.HOST}/root/getAllGamesData/${uid}/${startDate}/${endDate}/${page}/${count}`;
+// }
+
+// export function addIncome(uid, targetUID, yomob, chance, date) {
+// 	return `${config.HOST}/root/addIncome/${uid}/${targetUID}/${yomob}/${chance}/${date}`;
+// }
+
+// export function getIncome(uid, targetUID, startDate, endDate, page, count) {
+// 	return `${config.HOST}/root/getIncome/${uid}/${targetUID}/${startDate}/${endDate}/${page}/${count}`;
+// }
+
+// export function getTaoJinFarmIncome(ssid) {
+// 	return `${config.HOST}/taoJinFarm/getTaoJinFarmIncome/${ssid}`;
+// }

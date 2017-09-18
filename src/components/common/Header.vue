@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-		<div class="logo">根系统管理后台</div>
+		<div class="logo">消灭星星管理后台</div>
 		<div class="user-info">
 			<el-dropdown trigger="click" @command="handleCommand">
 				<span class="el-dropdown-link">

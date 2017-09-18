@@ -69,7 +69,7 @@ export function getUserInfo() {
 }
 
 export function isAdmin() {
-	return userInfo.adminType > 4;
+	return userInfo.adminType > 0;
 }
 
 export function isMe() {
@@ -93,3 +93,7 @@ export function toDecimal2(x) {
 	}
 	return s;
 }
+
+export function myEncodeURIComponent(str) {
+	return encodeURIComponent(str.replace(/%/g, '`'));
+};

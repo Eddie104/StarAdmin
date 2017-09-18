@@ -1,6 +1,6 @@
 <template>
 	<div class="login-wrap">
-		<div class="ms-title">小游戏管理系统</div>
+		<div class="ms-title">消灭星星管理后台</div>
 		<div class="ms-login">
 			<el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="0px" class="demo-ruleForm" v-loading="isShowLoading" element-loading-text="拼命登录中">
 				<el-form-item prop="username">
@@ -58,37 +58,8 @@
 						net.get(api.login(this.ruleForm.username, this.ruleForm.password), (result) => {
 							this.isShowLoading = false;
 							if (result.status === 1) {
-								net.get(api.getUserData(result.data), result => {
-									if (result.status === 1) {
-										/*
-										account: "13801872620",
-										accountID: 1008,
-										adminType: 5,
-										avatarOwned: Array[6],
-										emPwd: "d823b1c449857f1aa21bf0cab77e607d",
-										followedCount: 1,
-										followingCount: 1,
-										friendCount: 1,
-										gender: 0,
-										headName: "https://ohpg5c49q.qnssl.com/easyHead.png",
-										id: 1008,
-										modifyNameCount: 0,
-										modifyPwdCount: 1,
-										name: "1008",
-										phone: "13801872620",
-										signature: "我不懒，但是我也没有留下签名",
-										source: "easy",
-										tuMoney: 263
-										 */
-										localStorage.setItem('userInfo', JSON.stringify(result.data));
-										this.$router.push('/index');
-									} else {
-										this.$message.error(result.data);
-									}
-								}, err => {
-									this.isShowLoading = false;
-									this.$message.error('有错误');
-								});
+								localStorage.setItem('userInfo', JSON.stringify(result.data));
+								this.$router.push('/index');
 							} else {
 								this.isShowLoading = false;
 								this.$message.error(result.data);

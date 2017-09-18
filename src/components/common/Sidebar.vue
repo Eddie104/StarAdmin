@@ -29,21 +29,9 @@
 			<el-submenu index="2">
 				<template slot="title"><i class="el-icon-menu"></i>游戏数据</template>
 				<el-menu-item index="userList">账号管理</el-menu-item>
-				<el-menu-item index="appstoreAccountList">苹果发开者账号管理</el-menu-item>
+				<!-- <el-menu-item index="appstoreAccountList">苹果发开者账号管理</el-menu-item>
 				<el-menu-item index="gameDataList">数据统计</el-menu-item>
-				<el-menu-item index="incomeDataList">收入统计</el-menu-item>
-			</el-submenu>
-			<el-submenu index="3">
-				<template slot="title"><i class="el-icon-menu"></i>自动打包</template>
-				<el-menu-item index="gameTemplateList">模板列表</el-menu-item>
-				<el-menu-item index="seriesList">系列列表</el-menu-item>
-				<el-menu-item index="gameList">游戏列表</el-menu-item>
-				<el-menu-item index="buildMacList">打包机列表</el-menu-item>
-				<el-menu-item index="taskList">打包任务列表</el-menu-item>
-			</el-submenu>
-			<el-submenu index="4" v-if="isMe">
-				<template slot="title"><i class="el-icon-menu"></i>淘金农场</template>
-				<el-menu-item index="taoJinFarmIncomeData">今日收益</el-menu-item>
+				<el-menu-item index="incomeDataList">收入统计</el-menu-item> -->
 			</el-submenu>
 		</el-menu>
 	</div>

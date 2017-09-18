@@ -30,9 +30,9 @@
 </template>
 
 <script>
-	import * as net from '../../net';
-	import * as api from '../../api';
-	import * as utils from '../../utils';
+	import * as net from '../../../net';
+	import * as api from '../../../api';
+	import * as utils from '../../../utils';
 
 	export default {
 		data() {
@@ -51,8 +51,8 @@
 			// 	return row.tag === value;
 			// },
 			handleEdit(index, row) {
-				console.log(row);
-				console.log(row.accountID);
+				// console.log(row);
+				// console.log(row.accountID);
 				this.$router.push({ path: 'editUser', query: { accountID: row.accountID } })
 			},
 			// handleDelete(index, row) {
@@ -63,11 +63,13 @@
 			}
 		},
 		mounted: function () {
-			net.get(api.getRootUsers(0, 10), result => {
+			// 获取账号数据
+			net.get(api.getAccountData(1, 10), result => {
 				this.isShowLoading = false;
 				if (result.status === 1) {
-					this.tableData = result.data.users;
-					this.total = result.data.count;
+					console.log(result);
+					// this.tableData = result.data.users;
+					// this.total = result.data.count;
 				} else {
 					this.$message.error(result.data);
 				}
