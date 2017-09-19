@@ -6,19 +6,19 @@
 				<el-breadcrumb-item>账号管理</el-breadcrumb-item>
 			</el-breadcrumb>
 		</div>
-		<el-row v-if="isAdmin" type="flex" justify="end" align="middle" style="marginBottom: 10px">
+		<!-- <el-row v-if="isAdmin" type="flex" justify="end" align="middle" style="marginBottom: 10px">
 			<el-button type="primary" size="small" @click="handleAdd()">添加</el-button>
-		</el-row>
+		</el-row> -->
 		<el-table :data="tableData" border style="width: 100%" stripe v-loading="isShowLoading" element-loading-text="数据加载中">
 			<el-table-column prop="id" label="ID" sortable width="150" />
-			<el-table-column prop="name" label="名字" width="280" />
-			<el-table-column prop="mail" label="邮箱" width="280" />
-			<el-table-column prop="remarks" label="备注" show-overflow-tooltip />
-			<el-table-column label="操作" width="160">
+			<el-table-column prop="name" label="名字" width="150" />
+			<el-table-column prop="registerDateStr" label="注册日期" width="150" />
+			<el-table-column prop="source" label="来源" show-overflow-tooltip />
+			<!-- <el-table-column label="操作" width="160">
 				<template scope="scope">
 					<el-button size="small" type="info" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
 				</template>
-			</el-table-column>
+			</el-table-column> -->
 		</el-table>
 		<div class="pagination">
 			<el-pagination
@@ -67,9 +67,11 @@
 			net.get(api.getAccountData(1, 10), result => {
 				this.isShowLoading = false;
 				if (result.status === 1) {
-					console.log(result);
-					// this.tableData = result.data.users;
-					// this.total = result.data.count;
+					for (let i = 0; i < result.data.results.length; i++) {
+						result.data.results[i].registerDateStr = utils.dateFormat(new Date(result.data.results[i].registerDate), 'yyyy-MM-dd');
+					}
+					this.tableData = result.data.results;
+					this.total = result.data.total;
 				} else {
 					this.$message.error(result.data);
 				}
