@@ -13,6 +13,26 @@ export function getAccountData(page, count, source = null) {
 	return url;
 }
 
+export function getUserData(page, count, source = null) {
+	const url = `${config.HOST}/admin/getUserData/${page}/${count}`;
+	if (source === 'web' || source === 'android') {
+		return `${url}/${source}`;
+	}
+	return url;
+}
+
+export function getUserLoginData(page, count, source = null) {
+	const url = `${config.HOST}/admin/getUserLoginData/${page}/${count}`;
+	if (source === 'web' || source === 'android') {
+		return `${url}/${source}`;
+	}
+	return url;	
+}
+
+export function getUserLevelData(uid, page, count) {
+	return `${config.HOST}/admin/getUserLevelData/${uid}/${page}/${count}`;
+}
+
 // export function register(account, password, mail) {
 // 	return `${config.HOST}/users/register/${account}/${password}/root/${encodeURIComponent(mail)}`;
 // }

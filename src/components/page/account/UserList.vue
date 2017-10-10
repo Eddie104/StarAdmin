@@ -3,7 +3,7 @@
 		<div class="crumbs">
 			<el-breadcrumb separator="/">
 				<el-breadcrumb-item><i class="el-icon-menu"></i> 游戏数据</el-breadcrumb-item>
-				<el-breadcrumb-item>用户概览</el-breadcrumb-item>
+				<el-breadcrumb-item>用户信息</el-breadcrumb-item>
 			</el-breadcrumb>
 		</div>
 		<!-- <el-row v-if="isAdmin" type="flex" justify="end" align="middle" style="marginBottom: 10px">
@@ -13,21 +13,15 @@
 			<el-table-column prop="id" label="ID" sortable width="120" />
 			<el-table-column prop="name" label="名字" width="150" />
 			<el-table-column prop="registerDateStr" label="注册日期" width="150" />
-			<el-table-column prop="lastLoginDateStr" label="最后登录日期" width="180" />
-			<el-table-column prop="maxScore" label="最高分数" width="150" />
-			<el-table-column prop="maxLevel" label="最高关卡数" width="150" />
+			<el-table-column prop="registerIP" label="注册IP" width="180" />
+			<el-table-column prop="deviceMode" label="设备型号" width="150" />
+			<el-table-column prop="deviceID" label="设备ID" width="150" />
+			<el-table-column prop="deviceOperator" label="运营商" width="150" />
+			<el-table-column prop="phone" label="手机号" width="150" />
 			<el-table-column prop="dollar" label="金币数量" width="150" />
 			<el-table-column prop="diamonds" label="钻石数量" width="150" />
+			<el-table-column prop="items" label="道具数量" width="150" />
 			<el-table-column prop="payMoney" label="充值金额" width="150" />
-			<el-table-column prop="source" label="来源" width="120" />
-
-			<!--
-				: 1,
-				: 1,
-				: 1,
-				: 1,
-				items: 1,
-			-->
 			<!-- <el-table-column label="操作" width="160">
 				<template scope="scope">
 					<el-button size="small" type="info" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
@@ -76,12 +70,11 @@
 			},
 			handleCurrentChange(val) {
 				// 获取账号数据
-				net.get(api.getAccountData(val, 10), result => {
+				net.get(api.getUserData(val, 10), result => {
 					this.isShowLoading = false;
 					if (result.status === 1) {
 						for (let i = 0; i < result.data.results.length; i++) {
 							result.data.results[i].registerDateStr = utils.dateFormat(new Date(result.data.results[i].registerDate), 'yyyy-MM-dd');
-							result.data.results[i].lastLoginDateStr = utils.dateFormat(new Date(result.data.results[i].lastLoginDate), 'yyyy-MM-dd');
 						}
 						this.tableData = result.data.results;
 						this.total = result.data.total;

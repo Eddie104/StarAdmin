@@ -21,6 +21,18 @@ const router = new Router({
 					path: '/userList',
 					component: resolve => require(['../components/page/account/AccountList.vue'], resolve)
 				},
+				{
+					path: '/userDetailList',
+					component: resolve => require(['../components/page/account/UserList.vue'], resolve)
+				},
+				{
+					path: '/userLoginList',
+					component: resolve => require(['../components/page/account/UserLoginList.vue'], resolve)
+				},
+				{
+					path: '/levelDataList',
+					component: resolve => require(['../components/page/account/LevelDataList.vue'], resolve)	
+				},
 				// {
 				// 	path: '/addUser',
 				// 	component: resolve => require(['../components/page/AddUser.vue'], resolve)
