@@ -33,6 +33,34 @@ export function getUserLevelData(uid, page, count) {
 	return `${config.HOST}/admin/getUserLevelData/${uid}/${page}/${count}`;
 }
 
+export function getDollarRecord(uid, page, count) {
+	return `${config.HOST}/admin/getDollarRecord/${uid}/${page}/${count}`;
+}
+
+export function getItemRecord(uid, page, count) {
+	return `${config.HOST}/admin/getItemRecord/${uid}/${page}/${count}`;
+}
+
+export function getDiamondsRecord(uid, page, count) {
+	return `${config.HOST}/admin/getDiamondsRecord/${uid}/${page}/${count}`;
+}
+
+export function getPay(uid, page, count) {
+	return `${config.HOST}/admin/getPay/${uid}/${page}/${count}`;
+}
+
+export function getDollarCode(page, count) {
+	return `${config.HOST}/admin/getDollarCode/${page}/${count}`;
+}
+
+export function createActivityNotice(content) {
+	return `${config.HOST}/admin/createActivityNotice`;
+}
+
+export function getActivityNotice(page, count) {
+	return `${config.HOST}/admin/getActivityNotice/${page}/${count}`;
+}
+
 // export function register(account, password, mail) {
 // 	return `${config.HOST}/users/register/${account}/${password}/root/${encodeURIComponent(mail)}`;
 // }

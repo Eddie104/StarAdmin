@@ -31,7 +31,31 @@ const router = new Router({
 				},
 				{
 					path: '/levelDataList',
-					component: resolve => require(['../components/page/account/LevelDataList.vue'], resolve)	
+					component: resolve => require(['../components/page/account/LevelDataList.vue'], resolve)
+				},
+				{
+					path: '/dollarRecord',
+					component: resolve => require(['../components/page/account/DollarRecord.vue'], resolve)
+				},
+				{
+					path: '/itemRecord',
+					component: resolve => require(['../components/page/account/ItemRecord.vue'], resolve)
+				},
+				{
+					path: '/diamondsRecord',
+					component: resolve => require(['../components/page/account/DiamondsRecord.vue'], resolve)
+				},
+				{
+					path: '/pay',
+					component: resolve => require(['../components/page/account/Pay.vue'], resolve)
+				},
+				{
+					path: '/dollarCode',
+					component: resolve => require(['../components/page/account/DollarCode.vue'], resolve)
+				},
+				{
+					path: '/activityNotice',
+					component: resolve => require(['../components/page/account/ActivityNotice.vue'], resolve)
 				},
 				// {
 				// 	path: '/addUser',
