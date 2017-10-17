@@ -135,6 +135,7 @@ const router = new Router({
 				// 	path: '/addIncome',
 				// 	component: resolve => require(['../components/page/AddIncome.vue'], resolve)
 				// },
+				/*
 				{
 					path: '/basetable',
 					component: resolve => require(['../components/page/BaseTable.vue'], resolve)
@@ -171,6 +172,7 @@ const router = new Router({
 					path: '/taoJinFarmIncomeData',
 					component: resolve => require(['../components/page/TaoJinFarmIncomeData.vue'], resolve)
 				}
+				*/
 			]
 		},
 		{
