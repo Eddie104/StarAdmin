@@ -60,7 +60,6 @@ export function isEmail(mail) {
 	return RegExp(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/).test(mail);
 }
 
-
 let userInfo = localStorage.getItem('userInfo');
 userInfo = JSON.parse(userInfo);
 
@@ -69,7 +68,7 @@ export function getUserInfo() {
 }
 
 export function isAdmin() {
-	return userInfo.adminType > 0;
+	return parseInt(userInfo.adminType, 10) > 0;
 }
 
 export function isMe() {

@@ -60,5 +60,6 @@ typings/
 # sublime text
 *.sublime-project
 *.sublime-workspace
+dist/
 
 .DS_Store
