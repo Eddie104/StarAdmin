@@ -1,5 +1,5 @@
 
-export const __DEV__ = true;
+export const __DEV__ = false;
 
 export const HOST = __DEV__ ? 'http://127.0.0.1:3000' : 'http://103.55.27.4:3000';
 

@@ -33,6 +33,10 @@ export function getUserLevelData(uid, page, count) {
 	return `${config.HOST}/admin/getUserLevelData/${uid}/${page}/${count}`;
 }
 
+export function getLevelData (page, count) {
+	return `${config.HOST}/admin/getLevelData/${page}/${count}`;
+}
+
 export function getDollarRecord(uid, page, count) {
 	return `${config.HOST}/admin/getDollarRecord/${uid}/${page}/${count}`;
 }

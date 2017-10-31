@@ -15,8 +15,8 @@
  			-->
 			<el-table-column prop="id" label="ID" sortable width="120" />
 			<el-table-column prop="numLevel" label="关卡数" width="150" />
-			<el-table-column prop="startDateStr" label="开始时间" width="150" />
-			<el-table-column prop="endDateStr" label="结束时间" width="150" />
+			<el-table-column prop="startDateStr" label="开始时间" width="220" />
+			<el-table-column prop="endDateStr" label="结束时间" width="220" />
 			<el-table-column prop="startItems" label="开始道具" width="150" />
 			<el-table-column prop="endItems" label="结束道具" width="150" />
 			<el-table-column prop="startDollar" label="开始金币" width="150" />
@@ -70,11 +70,12 @@
 			},
 			handleCurrentChange(val) {
 				// 获取账号数据
-				net.get(api.getUserLevelData(1000, val, 10), result => {
+				net.get(api.getLevelData(val, 10), result => {
 					this.isShowLoading = false;
 					if (result.status === 1) {
 						for (let i = 0; i < result.data.results.length; i++) {
-							result.data.results[i].lastLoginDateStr = utils.dateFormat(new Date(result.data.results[i].lastLoginDate), 'yyyy-MM-dd');
+							result.data.results[i].startDateStr = utils.dateFormat(new Date(result.data.results[i].startDate), 'yyyy-MM-dd hh:mm:ss');
+							result.data.results[i].endDateStr = utils.dateFormat(new Date(result.data.results[i].endDate), 'yyyy-MM-dd hh:mm:ss');
 						}
 						this.tableData = result.data.results;
 						this.total = result.data.total;
