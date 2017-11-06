@@ -12,7 +12,7 @@
 		<el-table :data="tableData" border style="width: 100%" stripe v-loading="isShowLoading" element-loading-text="数据加载中">
 			<el-table-column prop="id" label="ID" sortable width="120" />
 			<el-table-column prop="name" label="名字" width="150" />
-			<el-table-column prop="registerDateStr" label="注册日期" width="150" />
+			<el-table-column prop="registerDateStr" label="注册日期" width="220" />
 			<el-table-column prop="registerIP" label="注册IP" width="180" />
 			<el-table-column prop="deviceMode" label="设备型号" width="150" />
 			<el-table-column prop="deviceID" label="设备ID" width="150" />
@@ -74,7 +74,7 @@
 					this.isShowLoading = false;
 					if (result.status === 1) {
 						for (let i = 0; i < result.data.results.length; i++) {
-							result.data.results[i].registerDateStr = utils.dateFormat(new Date(result.data.results[i].registerDate), 'yyyy-MM-dd');
+							result.data.results[i].registerDateStr = utils.dateFormat(new Date(result.data.results[i].registerDate), 'yyyy-MM-dd hh:mm:ss');
 						}
 						this.tableData = result.data.results;
 						this.total = result.data.total;

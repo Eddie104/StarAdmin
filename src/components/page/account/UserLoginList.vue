@@ -13,7 +13,7 @@
 			<!-- 可查看指定用户的登录时间以及IP，用户设备型号，设备唯一识别ID，运营商，手机号 -->
 			<el-table-column prop="id" label="ID" sortable width="120" />
 			<el-table-column prop="name" label="名字" width="150" />
-			<el-table-column prop="lastLoginDateStr" label="登录日期" width="150" />
+			<el-table-column prop="lastLoginDateStr" label="登录日期" width="220" />
 			<!-- <el-table-column prop="registerIP" label="注册IP" width="180" /> -->
 			<el-table-column prop="deviceMode" label="设备型号" width="150" />
 			<el-table-column prop="deviceID" label="设备ID" width="150" />
@@ -71,7 +71,7 @@
 					this.isShowLoading = false;
 					if (result.status === 1) {
 						for (let i = 0; i < result.data.results.length; i++) {
-							result.data.results[i].lastLoginDateStr = utils.dateFormat(new Date(result.data.results[i].lastLoginDate), 'yyyy-MM-dd');
+							result.data.results[i].lastLoginDateStr = utils.dateFormat(new Date(result.data.results[i].lastLoginDate), 'yyyy-MM-dd hh:mm:ss');
 						}
 						this.tableData = result.data.results;
 						this.total = result.data.total;

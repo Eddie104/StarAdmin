@@ -17,11 +17,20 @@
 			<el-table-column prop="numLevel" label="关卡数" width="150" />
 			<el-table-column prop="startDateStr" label="开始时间" width="220" />
 			<el-table-column prop="endDateStr" label="结束时间" width="220" />
-			<el-table-column prop="startItems" label="开始道具" width="150" />
-			<el-table-column prop="endItems" label="结束道具" width="150" />
+			<!-- <el-table-column prop="startItems" label="开始道具" width="150" /> -->
+			<!-- // 炸弹、变色、交换、倒计时 -->
+			<el-table-column prop="startZhaDan" label="开始炸弹" width="130" />
+			<el-table-column prop="startBianSe" label="开始变色" width="130" />
+			<el-table-column prop="startJiaoHuan" label="开始交换" width="130" />
+			<el-table-column prop="startDaoJiShi" label="开始倒计时" width="150" />
+			<el-table-column prop="endZhaDan" label="结束炸弹" width="130" />
+			<el-table-column prop="endBianSe" label="结束变色" width="130" />
+			<el-table-column prop="endJiaoHuan" label="结束交换" width="130" />
+			<el-table-column prop="endDaoJiShi" label="结束倒计时" width="150" />
+			<!-- <el-table-column prop="endItems" label="结束道具" width="150" /> -->
 			<el-table-column prop="startDollar" label="开始金币" width="150" />
 			<el-table-column prop="endDollar" label="结束金币" width="150" />
-			<el-table-column prop="awards" label="关卡奖励" width="150" />
+			<el-table-column prop="awards" label="关卡奖励" width="200"/>
 			<!-- <el-table-column label="操作" width="160">
 				<template scope="scope">
 					<el-button size="small" type="info" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
@@ -76,6 +85,19 @@
 						for (let i = 0; i < result.data.results.length; i++) {
 							result.data.results[i].startDateStr = utils.dateFormat(new Date(result.data.results[i].startDate), 'yyyy-MM-dd hh:mm:ss');
 							result.data.results[i].endDateStr = utils.dateFormat(new Date(result.data.results[i].endDate), 'yyyy-MM-dd hh:mm:ss');
+							result.data.results[i].startZhaDan = result.data.results[i].startItems[0];
+							result.data.results[i].startBianSe = result.data.results[i].startItems[1];
+							result.data.results[i].startJiaoHuan = result.data.results[i].startItems[2];
+							result.data.results[i].startDaoJiShi = result.data.results[i].startItems[3];
+							result.data.results[i].endZhaDan = result.data.results[i].endItems[0];
+							result.data.results[i].endBianSe = result.data.results[i].endItems[1];
+							result.data.results[i].endJiaoHuan = result.data.results[i].endItems[2];
+							result.data.results[i].endDaoJiShi = result.data.results[i].endItems[3];
+							if (result.data.results[i].awards.type == 0) {
+								result.data.results[i].awards = `金币 ${result.data.results[i].awards.count}`;
+							} else if (result.data.results[i].awards.type == 1) {
+								result.data.results[i].awards = `钻石 ${result.data.results[i].awards.count}`;
+							}
 						}
 						this.tableData = result.data.results;
 						this.total = result.data.total;

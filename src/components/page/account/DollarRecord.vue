@@ -11,10 +11,11 @@
 		</el-row> -->
 		<el-table :data="tableData" border style="width: 100%" stripe v-loading="isShowLoading" element-loading-text="数据加载中">
 			<el-table-column prop="id" label="ID" width="120" />
+			<el-table-column prop="uid" label="用户ID" width="120" />
 			<el-table-column prop="oldVal" label="旧值" width="150" />
 			<el-table-column prop="newVal" label="新值" width="150" />
 			<el-table-column prop="changedValue" label="变化" width="150" />
-			<el-table-column prop="date" label="日期" width="150" />
+			<el-table-column prop="date" label="日期" width="220" />
 			<el-table-column prop="reason" label="原因" width="150" />
 			<el-table-column prop="params" label="参数" width="150" />
 			<!-- <el-table-column label="操作" width="160">
@@ -65,11 +66,11 @@
 			},
 			handleCurrentChange(val) {
 				// 获取账号数据
-				net.get(api.getDollarRecord(1000, val, 10), result => {
+				net.get(api.getDollarRecord(val, 10), result => {
 					this.isShowLoading = false;
 					if (result.status === 1) {
 						for (let i = 0; i < result.data.results.length; i++) {
-							result.data.results[i].date = utils.dateFormat(new Date(result.data.results[i].date), 'yyyy-MM-dd');
+							result.data.results[i].date = utils.dateFormat(new Date(result.data.results[i].date), 'yyyy-MM-dd hh:mm:ss');
 							result.data.results[i].changedValue = result.data.results[i].newVal - result.data.results[i].oldVal;
 						}
 						this.tableData = result.data.results;
