@@ -57,6 +57,10 @@ const router = new Router({
 					path: '/activityNotice',
 					component: resolve => require(['../components/page/account/ActivityNotice.vue'], resolve)
 				},
+				{
+					path: '/findAccount',
+					component: resolve => require(['../components/page/account/findAccount.vue'], resolve)
+				},
 				// {
 				// 	path: '/addUser',
 				// 	component: resolve => require(['../components/page/AddUser.vue'], resolve)

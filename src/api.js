@@ -65,6 +65,10 @@ export function getActivityNotice(page, count) {
 	return `${config.HOST}/admin/getActivityNotice/${page}/${count}`;
 }
 
+export function changeAccount(oldID, newID) {
+	return `${config.HOST}/admin/changeAccount/${oldID}/${newID}`;
+}
+
 // export function register(account, password, mail) {
 // 	return `${config.HOST}/users/register/${account}/${password}/root/${encodeURIComponent(mail)}`;
 // }

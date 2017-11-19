@@ -44,6 +44,7 @@
 				<template slot="title"><i class="el-icon-menu"></i>游戏管理</template>
 				<el-menu-item index="dollarCode">金币兑换码</el-menu-item>
 				<el-menu-item index="activityNotice">活动通知</el-menu-item>
+				<el-menu-item index="findAccount">找回账号</el-menu-item>
 			</el-submenu>
 		</el-menu>
 	</div>
