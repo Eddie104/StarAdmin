@@ -15,6 +15,7 @@
  			-->
 			<el-table-column prop="id" label="ID" sortable width="120" />
 			<el-table-column prop="numLevel" label="关卡数" width="150" />
+			<el-table-column prop="isWin" label="是否过关" width="150" />
 			<el-table-column prop="startDateStr" label="开始时间" width="220" />
 			<el-table-column prop="endDateStr" label="结束时间" width="220" />
 			<!-- <el-table-column prop="startItems" label="开始道具" width="150" /> -->
